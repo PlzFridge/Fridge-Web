@@ -1,0 +1,79 @@
+.container {
+    height: 100%;
+    text-align: center;
+    flex: 2;
+}
+
+.list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    height: 500px;
+    overflow-y: auto;
+    background-color: var(--color-bg);
+    opacity: 1;
+    margin-left: 18px;
+    transition: all var(--animation-duration) ease-out;
+}
+
+.list.anim-out {
+    opacity: 0.6;
+    transform: scale(0.96) translateY(40px);
+}
+
+.food {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 150px;
+    margin: 8px;
+    color: var(--color-white);
+    background-color: var(--color-light-white);
+}
+
+.food.invisible {
+    display: none;
+}
+
+.food__img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.food__description {
+    position: absolute;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all var(--animation-duration) ease-in;
+}
+
+.food:hover .food__description {
+    opacity: 0.8;
+    transform: translateY(0px);
+}
+
+.food__name {
+    margin-top: 30px;
+    color: var(--color-orange);
+}
+
+.food__name:after { 
+    content: '';
+    display: block;
+    position: relative;
+    left: 50%; 
+    width: 50px;
+    height: 2px;
+    transform: translateX(-50%); 
+    margin-top: 8px;
+    background-color: var(--color-dark-white);
+}
