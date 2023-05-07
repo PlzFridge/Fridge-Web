@@ -1,0 +1,22 @@
+.footer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn__container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 36px;
+}
+
+.btn {
+    margin: 0px 100px;
+    color: var(--color-black);
+    font-size: var(--font-small);
+    font-weight: var(--weight-bold);
+    padding: 12px 20px;
+    border: 2px solid var(--color-main);
+    border-radius: var(--size-border-radius);
+}
