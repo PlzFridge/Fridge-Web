@@ -15,5 +15,5 @@
     font-size: var(--font-large);
     font-weight: var(--weight-bold);
     color: var(--color-black);
-    margin-top: 60px;
+    margin: 64px 0px 0px 0px;
 }
