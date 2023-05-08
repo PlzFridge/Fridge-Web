@@ -1,0 +1,42 @@
+.container { 
+    display: flex;
+    background-color: var(--color-green);
+    margin: 12px 8px 12px 8px;
+    border-radius: 1rem;
+}
+
+.add__food{
+    width: 200px;
+    text-align: center;
+    color: var(--color-white);
+    font-size: 1rem;
+    font-weight: var(--weight-semi-bold);
+}
+
+.add__food__name {
+    width: 100px;
+    margin: 12px 50px;
+}
+
+.add__duration__at {
+    width: 100px;
+    margin: 12px 50px;
+}
+
+.add__button {
+    margin-top: 11px;
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    transition: all 200ms ease-out;
+    color: var(--color-green);
+    background-color: var(--color-white);
+    text-align: center;
+    border: none;
+}
+
+.add__button:hover {
+    background-color: var(--color-white);
+    transform: rotate(15deg) scale(1.2);
+}
