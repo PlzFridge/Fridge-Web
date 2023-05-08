@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    border-bottom: 3px solid white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 4px;
+    padding-left: 8px;
+}
+
+.category {
+    font-size: 1rem;
+    color: var(--color-white);
+    font-weight: var(--weight-bold);
+    width: 200px;
+    text-align: center;
+}
+
+
