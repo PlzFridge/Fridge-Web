@@ -1,9 +1,13 @@
 import React from 'react';
-import { useState } from "react";
+import { useState, useRef } from "react";
 import styles from './FoodDetailList.module.css'
 import {FaTrashAlt} from 'react-icons/fa'
 
-export default function FoodDetailList() {
+export default function FoodDetailList(props) {  
+
+    const openModal = (foodId) => {
+        props.openModal(foodId); // AddDeletePage에서 전달받은 openModal함수를 현재 선택된 food의 Id를 인자로 실행
+    }
 
     // dummy data
     const [foodList, setFoodList] = useState([
@@ -26,7 +30,7 @@ export default function FoodDetailList() {
                     <p className={styles.category}>{item.foodName}</p>
                     <p className={styles.category}>{item.durationAt}</p>
                     <div className={styles.icon}>
-                    <button className={styles.delete__button}>
+                    <button className={styles.delete__button} onClick={() => {openModal(item.id)}}>
                         <FaTrashAlt/> 
                     </button>
                     </div>
@@ -35,4 +39,3 @@ export default function FoodDetailList() {
         </ul>
     );
 }
-
