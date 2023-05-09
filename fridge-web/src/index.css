@@ -64,6 +64,7 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   box-shadow: 9px 11px 21px -5px rgba(0,0,0,0.58);
 -webkit-box-shadow: 9px 11px 21px -5px rgba(0,0,0,0.58);
