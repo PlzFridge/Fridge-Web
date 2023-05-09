@@ -33,7 +33,7 @@
   --weight-regular: 400;
 
   /* Size */
-  --size-border-radius: 4px;
+  --size-border-radius: 8px;
   --animation-duration: 300ms;
 } 
 
@@ -64,6 +64,7 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  align-items: center;
   box-shadow: 9px 11px 21px -5px rgba(0,0,0,0.58);
 -webkit-box-shadow: 9px 11px 21px -5px rgba(0,0,0,0.58);
 -moz-box-shadow: 9px 11px 21px -5px rgba(0,0,0,0.58);

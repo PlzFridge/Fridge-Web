@@ -1,0 +1,110 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 100%;
+    border-radius: 24px;
+    background-color: var(--color-main);
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: var(--font-large);
+    font-weight: var(--weight-bold);
+    color: var(--color-white);
+    margin: 0px 0px;
+}
+
+.recipe__img {
+    margin-top: 16px;
+    width: 320px;
+    height: 240px;
+}
+
+.ingredient__list {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: row;
+    color: var(--color-white);
+}
+
+.not__exist__list {
+    color: var(--color-red);
+}
+
+.exist__list {
+    color: var(--color-green);
+    font-weight: var(--weight-bold);
+}
+
+.process {
+    margin-top: 24px;
+    color: white;   
+}
+
+.carbon__output__container {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--color-white);
+}
+
+span{
+    text-align: center;
+}
+
+.carbon__output {
+    color: var(--color-green);
+    font-weight: var(--weight-bold);
+}
+
+.carbon__text__container {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.btn__container {
+    margin-top: 32px;
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.later__btn {
+    border: none;
+    border-radius: var(--size-border-radius);
+    font-size: var(--font-small);
+    font-weight: var(--weight-bold);
+    color: var(--color-main);
+    width: 148px;
+    height: 52px;
+}
+
+.later__btn:hover {
+    border: 2px solid var(--color-black);
+}
+
+.ate__btn {
+    border: none;
+    border-radius: var(--size-border-radius);
+    font-size: var(--font-small);
+    font-weight: var(--weight-bold);
+    color: var(--color-white);
+    background-color: var(--color-green);
+    width: 148px;
+    height: 52px;
+}
+
+.ate__btn:hover {
+    border: 2px solid var(--color-white);
+}

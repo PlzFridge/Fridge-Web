@@ -10,8 +10,8 @@
     margin: 20px 0px;
     border: 3px solid var(--color-main);
     border-radius: 12px;
-    padding: 24px;
-    width: 488px;
+    padding: 16px;
+    width: 456px;
     box-shadow: 9px 11px 21px -5px rgba(0,0,0,0.58);
     -webkit-box-shadow: 9px 11px 21px -5px rgba(0,0,0,0.58);
     -moz-box-shadow: 9px 11px 21px -5px rgba(0,0,0,0.58);
@@ -28,7 +28,7 @@
 
 .recipe__name{
     margin-left: 12px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: var(--weight-bold);
     color: var(--color-black);
 }
@@ -59,9 +59,12 @@
 .exist__list{
     margin-bottom: 12px;
     color: var(--color-green);
+    font-size: 1rem;
+    font-weight: var(--weight-semi-bold);
 }
 
 .not__exist__list{
     color: var(--color-red);
     font-weight: var(--weight-semi-bold);
+    font-size: 1rem;
 }
