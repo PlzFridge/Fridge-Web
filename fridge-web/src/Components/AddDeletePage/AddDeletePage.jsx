@@ -33,8 +33,6 @@ export default function AddDeletePage() {
         setSelectedFood(-1);
     }
 
-    console.log(modalOpen);
-
     return (
         <div className={styles.container}>
             <div ref={myListRef} className={styles.showList}>
