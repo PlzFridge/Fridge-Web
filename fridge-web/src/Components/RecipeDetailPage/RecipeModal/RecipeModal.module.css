@@ -1,45 +1,41 @@
 .modal__container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     width: 60%;
     height: 50%;
     background-color: var(--color-lighter-grey);
     border-radius: 32px;
-}
+}   
 
 .modal__title {
     font-size: var(--font-medium);
     font-weight: var(--weight-bold);
     margin: 0px 0px;
-    text-align: center; 
+    text-align: center;
 }
 
-.btn__container {
-    margin-top: 56px;
+.check__box__container {
+    margin-top: 36px;
     display: flex;
+    flex-direction: column ;
     justify-content: center;
 }
 
-.yes__btn {
-    border: none;
-    border-radius: var(--size-border-radius);
-    font-size: var(--font-small);
-    font-weight: var(--weight-bold);
-    color: var(--color-white); 
-    background-color: var(--color-main);
-    width: 80px;
-    height: 36px;
+.check__box {
+    width: 24px;
+    height: 24px;
+    padding-top: 0px;
+    margin: 0px 16px 12px 0px;
 }
 
-
-.yes__btn:hover {
-    background-color: var(--color-red);
-    border: 2px solid white;
+.check__label {
+    font-size: var(--font-medium);
 }
 
-.no__btn {
-    margin-left: 84px;
+.complete__btn {
+    margin-top: 36px;
     border: none;
     border-radius: var(--size-border-radius);
     font-size: var(--font-small);
@@ -50,6 +46,7 @@
     height: 36px;
 }
 
-.no__btn:hover {
+.complete__btn:hover {
+    background-color: var(--color-green);
     border: 2px solid white;
 }

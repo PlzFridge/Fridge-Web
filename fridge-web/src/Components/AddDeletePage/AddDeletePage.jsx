@@ -5,8 +5,7 @@ import AddFood from './AddFood/AddFood';
 import styles from './AddDeletePage.module.css'
 import DeleteModal from './DeleteModal/DeleteModal';
 
-export default function AddDeletePage() {
-
+export default function AddDeletePage() { 
     const [modalOpen, setModalOpen] = useState(false); // 모달창의 오픈 여부 
     const [selectedFood, setSelectedFood] = useState(-1);
 
