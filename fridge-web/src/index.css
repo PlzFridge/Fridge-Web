@@ -60,13 +60,11 @@ body {
 #root {
   width: 100%;
   height: 100%;
-  max-width: 1020px;
-  background-color: var(--color-light-white);
+  background-color: var(--color-main);
   overflow: hidden;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   box-shadow: 9px 11px 21px -5px rgba(0,0,0,0.58);
 -webkit-box-shadow: 9px 11px 21px -5px rgba(0,0,0,0.58);
 -moz-box-shadow: 9px 11px 21px -5px rgba(0,0,0,0.58);

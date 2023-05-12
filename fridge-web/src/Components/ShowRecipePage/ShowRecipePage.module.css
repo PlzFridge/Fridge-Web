@@ -4,6 +4,8 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    max-width: 70%;
+    background-color: var(--color-white);
 }
 
 .header {
