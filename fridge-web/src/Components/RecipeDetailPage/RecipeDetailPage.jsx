@@ -13,23 +13,12 @@ export default function RecipeDetailPage() {
 
   const myRecipe = useRef(null);
 
-  const hideRecipe = () => {
-    // 모달창을 열어야 하니 레시피 안 보이도록
-    myRecipe.current.style.display = "none";
-  }
-
-  const showRecipe = () => {
-    // 모달창 닫혔으니 식재료 현황 다시 보여지도록
-    myRecipe.current.style.display = "flex";
-  }
-
+ 
   const openModal = () => {
-    hideRecipe();
     setModalOpen((prev)=>(!prev));
   }
 
   const closeModal = () => {
-    showRecipe();
     setModalOpen((prev)=>(!prev));
     // 모달이 닫혔다는 것은 
     // 레시피를 선택타고 사용한 재료도 서버에 전달했으므로
@@ -39,7 +28,8 @@ export default function RecipeDetailPage() {
   
   return (
     <div className={styles.container}>
-      <div ref={myRecipe} className={styles.show__recipe}>
+      { !modalOpen ? (
+          <div ref={myRecipe} className={styles.show__recipe}>
         <header className={styles.header}>
           <h1 className={styles.title}> {recipeDetail.recipe_name} </h1>
         </header>
@@ -82,8 +72,9 @@ export default function RecipeDetailPage() {
           <button className={styles.ate__btn} onClick={openModal}>만들어 먹었어요</button>
         </div>
       </div>
-
-      <RecipeModal modalOpen={modalOpen} existList={recipeDetail.exist_list} closeModal={closeModal}/>
+        ) : (
+          <RecipeModal existList={recipeDetail.exist_list} closeModal={closeModal}/>
+        )}
     </div>
   );
 }

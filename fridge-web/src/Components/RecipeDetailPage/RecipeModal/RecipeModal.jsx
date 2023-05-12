@@ -11,10 +11,6 @@ export default function RecipeModal(props) {
         props.closeModal();
     }
 
-    
-    if(!props.modalOpen) // 열려있지 않으면 
-        return null;
-
     return (
         <div className={styles.modal__container}>
             <p className={styles.modal__title}>사용하고 남은 재료가 있다면 선택해주세요</p>
