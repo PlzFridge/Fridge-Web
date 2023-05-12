@@ -60,7 +60,7 @@ body {
 #root {
   width: 100%;
   height: 100%;
-  max-width: 1120px;
+  max-width: 1020px;
   background-color: var(--color-light-white);
   overflow: hidden;
   display: flex;

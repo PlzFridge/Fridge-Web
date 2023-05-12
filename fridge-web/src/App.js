@@ -9,8 +9,8 @@ import RecipeModal from './Components/RecipeDetailPage/RecipeModal/RecipeModal';
 
 export default function App() {
   return (
-    <>
-      <RecipeDetailPage/>
+    <>  
+      <MainPage/>
     </>
   );
 }
