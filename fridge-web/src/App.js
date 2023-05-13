@@ -19,6 +19,7 @@ const router = createBrowserRouter([
       { index: true, element: <MainPage /> },
       { path: "/addDelete", element: <AddDeletePage /> },
       { path: "/showRecipe", element: <ShowRecipePage /> },
+      { path: "/RecipeDetail/:recipeId", element: <RecipeDetailPage /> },
     ],
   },
 ]);
