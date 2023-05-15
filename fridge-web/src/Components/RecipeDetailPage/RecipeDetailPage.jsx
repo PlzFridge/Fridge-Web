@@ -2,18 +2,29 @@ import React from 'react';
 import styles from './RecipeDetailPage.module.css'
 import { useState, useRef } from 'react';
 import RecipeModal from './RecipeModal/RecipeModal';
+import { useParams } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 export default function RecipeDetailPage() {
+
+  //dummy data
   const [recipeDetail, setRecipeDetail] = useState(
     {recipe_id: 1, recipe_name: "김치찌개", recipe_img: "https://user-images.githubusercontent.com/31370590/236804229-35e565ad-601e-4c3b-8215-63b0c173413b.png", 
     exist_list: ["김치", "감자"], not_exist_list: ["마늘", "양파"], process: "https://www.youtube.com", carbon_output: 860}
   );
 
-  const [modalOpen, setModalOpen] = useState(false); // 모달창의 오픈 여부 
 
+  // Navigate 관련
+  const { recipeId } = useParams(); 
+  console.log(recipeId);
+
+  const navigate = useNavigate();
+
+
+  // 모달창 관련
+  const [modalOpen, setModalOpen] = useState(false); // 모달창의 오픈 여부 
   const myRecipe = useRef(null);
 
- 
   const openModal = () => {
     setModalOpen((prev)=>(!prev));
   }
@@ -23,7 +34,7 @@ export default function RecipeDetailPage() {
     // 모달이 닫혔다는 것은 
     // 레시피를 선택타고 사용한 재료도 서버에 전달했으므로
     // 이제 메인 화면으로 가는 로직 추가
-
+    navigate(`/`);
   }
   
   return (

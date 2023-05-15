@@ -8,7 +8,7 @@
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    height: 500px;
+    height: 450px;
     overflow-y: auto;
     background-color: var(--color-bg);
     opacity: 1;
@@ -26,8 +26,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 150px;
+    width: 180px;
+    height: 135px;
     margin: 8px;
     color: var(--color-white);
     background-color: var(--color-light-white);
