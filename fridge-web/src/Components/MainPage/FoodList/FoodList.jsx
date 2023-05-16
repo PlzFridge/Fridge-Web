@@ -19,7 +19,7 @@ export default function FoodList() {
         {fridgeId: '9', ingredientId: "1", ingredientName: '돼지고기', ingredientImg: 'https://user-images.githubusercontent.com/31370590/235884434-4b6cd656-3df1-458e-bd30-685d84ad17ea.png', storedAt:'2023-05-02', durationAt:'2023-05-05'},
       ]);
 
-    const getFoodList = async () => {
+    const getFoodListAPI = async () => {
       try {
         const response = await instance.get("/fridge-list");
         setFoodList(response.data);
@@ -29,7 +29,7 @@ export default function FoodList() {
     };
 
     useEffect(() => {
-      getFoodList();
+      getFoodListAPI();
     }, []);
     
     return (
