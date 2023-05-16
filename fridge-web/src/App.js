@@ -9,6 +9,7 @@ import RecipeModal from "./Components/RecipeDetailPage/RecipeModal/RecipeModal";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Components/Navbar/Root";
 import NoPage from "./Components/Navbar/NoPage";
+import { useState } from "react";
 
 const router = createBrowserRouter([
   {
