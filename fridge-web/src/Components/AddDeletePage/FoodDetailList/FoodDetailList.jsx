@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styles from './FoodDetailList.module.css'
 import {FaTrashAlt} from 'react-icons/fa'
 import instance from '../../API/api';
