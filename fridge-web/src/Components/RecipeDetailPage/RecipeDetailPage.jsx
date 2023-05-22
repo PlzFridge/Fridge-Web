@@ -9,11 +9,10 @@ export default function RecipeDetailPage() {
 
   const location = useLocation();
 
-  //dummy data
   const [recipeDetail, setRecipeDetail] = useState(
     location.state
   );
-  
+
   // Navigate 관련
   const navigate = useNavigate();
 
@@ -72,15 +71,15 @@ export default function RecipeDetailPage() {
               <span className={styles.exist__list}>
                 {recipeDetail.existList.join(", ")}
               </span>
-              {"를"}
+              {"의 유통기한이 지나"}
             </span>
             <span className={styles.carbon__text}>
-              {"생산하는데 발생되는 탄소량은 "}{" "}
+              {"버려진다면 이를 다시 생산하는데 "}{" "}
               <span className={styles.carbon__output}>
                 {recipeDetail.carbon}
                 {"g"}
               </span>
-              {" 입니다."}
+              {"의 탄소량이 배출됩니다."}
             </span>
             <div className={styles.carbon__text__container}>
               <span className={styles.carbon__text}>
@@ -93,7 +92,7 @@ export default function RecipeDetailPage() {
           </div>
 
           <div className={styles.btn__container}>
-            <button className={styles.later__btn}>나중에 먹을래요</button>
+            <button className={styles.later__btn} onClick={()=>{ navigate(`/ShowRecipe`);}}>나중에 먹을래요</button>
             <button className={styles.ate__btn} onClick={openModal}>
               만들어 먹었어요
             </button>
