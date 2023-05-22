@@ -2,26 +2,19 @@ import React from "react";
 import styles from "./RecipeDetailPage.module.css";
 import { useState, useRef } from "react";
 import RecipeModal from "./RecipeModal/RecipeModal";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 export default function RecipeDetailPage() {
+
+  const location = useLocation();
+
   //dummy data
-  const [recipeDetail, setRecipeDetail] = useState({
-    recipe_id: 1,
-    recipe_name: "김치찌개",
-    recipe_img:
-      "https://user-images.githubusercontent.com/31370590/236804229-35e565ad-601e-4c3b-8215-63b0c173413b.png",
-    exist_list: ["김치", "감자"],
-    not_exist_list: ["마늘", "양파"],
-    process: "https://www.youtube.com",
-    carbon_output: 860,
-  });
-
+  const [recipeDetail, setRecipeDetail] = useState(
+    location.state
+  );
+  
   // Navigate 관련
-  const { recipeId } = useParams();
-  console.log(recipeId);
-
   const navigate = useNavigate();
 
   // 모달창 관련
@@ -45,29 +38,29 @@ export default function RecipeDetailPage() {
       {!modalOpen ? (
         <div ref={myRecipe} className={styles.show__recipe}>
           <header className={styles.header}>
-            <h1 className={styles.title}> {recipeDetail.recipe_name} </h1>
+            <h1 className={styles.title}> {recipeDetail.recipeName} </h1>
           </header>
 
           <img
             className={styles.recipe__img}
-            src={recipeDetail.recipe_img}
+            src={recipeDetail.recipeImg}
             alt="recipe_img"
           />
 
           <div className={styles.ingredient__list}>
             필요한 재료 :&nbsp;
             <span className={styles.not__exist__list}>
-              {recipeDetail.not_exist_list.join(" ")}
+              {recipeDetail.notExistList.join(" ")}
             </span>
             &nbsp;
             <span className={styles.exist__list}>
-              {recipeDetail.exist_list.join(" ")}
+              {recipeDetail.existList.join(" ")}
             </span>
           </div>
 
           <a
-            className={styles.process}
-            href={recipeDetail.process}
+            className={styles.method}
+            href={recipeDetail.method}
             target="blank"
           >
             조리 과정 보기
@@ -77,14 +70,14 @@ export default function RecipeDetailPage() {
             <span className={styles.carbon__text}>
               {"이 음식을 만드는 데 필요한 "}{" "}
               <span className={styles.exist__list}>
-                {recipeDetail.exist_list.join(", ")}
+                {recipeDetail.existList.join(", ")}
               </span>
               {"를"}
             </span>
             <span className={styles.carbon__text}>
               {"생산하는데 발생되는 탄소량은 "}{" "}
               <span className={styles.carbon__output}>
-                {recipeDetail.carbon_output}
+                {recipeDetail.carbon}
                 {"g"}
               </span>
               {" 입니다."}
@@ -108,7 +101,7 @@ export default function RecipeDetailPage() {
         </div>
       ) : (
         <RecipeModal
-          existList={recipeDetail.exist_list}
+          existList={recipeDetail.existList}
           closeModal={closeModal}
         />
       )}

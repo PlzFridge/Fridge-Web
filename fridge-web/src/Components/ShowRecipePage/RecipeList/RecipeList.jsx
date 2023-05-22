@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import styles from "./RecipeList.module.css";
 import { useNavigate } from "react-router-dom";
-import ingredientList from "./../../API/ingredientList";  
+import ingredientList from "./../../API/ingredientList";
 import instance from "../../API/api";
 
 export default function RecipeList() {
@@ -41,7 +41,7 @@ export default function RecipeList() {
 
   const getRecipeListAPI = async () => {
     try {
-      const response = await instance.get("/recommend");  
+      const response = await instance.get("/recommend");
       setRecipeList(response.data);
     } catch (error) {
       console.error(error);
@@ -55,7 +55,23 @@ export default function RecipeList() {
   const navigate = useNavigate();
 
   const showRecipeDetail = (recipeId) => {
-    navigate(`/RecipeDetail/${recipeId}`);
+    for (let i = 0; i < 3; i++) {
+      if (recipeList[i].recipeId === recipeId) {
+        navigate(`/RecipeDetail`, {
+          state: {
+            recipeId: recipeList[i].recipeId,
+            recipeName: recipeList[i].recipeName,
+            recipeImg: recipeList[i].recipeImg,
+            ingredientList: recipeList[i].ingredientList,
+            method: recipeList[i].method,
+            existList: recipeList[i].existList,
+            notExistList: recipeList[i].notExistList,
+            carbon: recipeList[i].carbon,
+          },
+        });
+        break;
+      }
+    }
   };
 
   return (
