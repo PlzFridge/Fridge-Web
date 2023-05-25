@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './AddFood.module.css'
 import {IoMdAddCircle} from 'react-icons/io'
 import ingredientList from '../../API/ingredientList';
@@ -27,10 +27,12 @@ export default function AddFood() {
     }
 
     // 페이지 로드 시 오늘 날짜를 최소 날짜로 설정
-    window.onload = () => {
+    useEffect(()=>{
         const dateInput = document.getElementById('durationDate');
         dateInput.min = getToday();
-    };
+        console.log('컴포넌트가 마운트되었습니다.');
+    }, []);
+    
 
     // 현재 선택된 식재료와 날짜를 리턴하는 함수 
     const getNewFoodDate = () => {
