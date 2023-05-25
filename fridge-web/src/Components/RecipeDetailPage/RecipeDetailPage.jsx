@@ -47,7 +47,7 @@ export default function RecipeDetailPage() {
           />
 
           <div className={styles.ingredient__list}>
-            필요한 재료 :&nbsp;
+            필요한 재료 :&nbsp; 
             <span className={styles.not__exist__list}>
               {recipeDetail.notExistList.join(" ")}
             </span>
@@ -67,7 +67,7 @@ export default function RecipeDetailPage() {
 
           <div className={styles.carbon__output__container}>
             <span className={styles.carbon__text}>
-              {"이 음식을 만드는 데 필요한 "}{" "}
+              {"이 음식을 만드는 데 필요한 "}
               <span className={styles.exist__list}>
                 {recipeDetail.existList.join(", ")}
               </span>
@@ -77,16 +77,16 @@ export default function RecipeDetailPage() {
               {"버려진다면 이를 다시 생산하는데 "}{" "}
               <span className={styles.carbon__output}>
                 {recipeDetail.carbon}
-                {"g"}
+                &nbsp;gCO<sub>2e</sub>
               </span>
               {"의 탄소량이 배출됩니다."}
             </span>
             <div className={styles.carbon__text__container}>
               <span className={styles.carbon__text}>
-                {"이는 승용차 1대가 32.7km 이동 시 배출하는 탄소량이며"}
+                {"이는 승용차 1대가 "} {(recipeDetail.carbon * 0.0041).toFixed(3)} {"km 이동 시 배출하는 탄소량이며"}
               </span>
               <span className={styles.carbon__text}>
-                {"소나무 1.2그루가 1년간 흡수하는 이산화탄소량과 같습니다"}
+                {"소나무 "} {(recipeDetail.carbon / 8530 * 365).toFixed(3)}{" 그루가 하루에 흡수하는 이산화탄소량과 같습니다"}
               </span>
             </div>
           </div>

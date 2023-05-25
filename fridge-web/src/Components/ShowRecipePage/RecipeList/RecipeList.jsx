@@ -16,7 +16,7 @@ export default function RecipeList() {
       method: "",
       existList: ["김치", "감자"],
       notExistList: ["마늘", "양파"],
-      carbon: 860,
+      carbon: 500,
     },
     {
       recipeId: 2,
