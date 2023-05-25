@@ -11,8 +11,7 @@ export default function RecipeList() {
     {
       recipeId: 1,
       recipeName: "김치찌개",
-      recipeImg:
-        "https://user-images.githubusercontent.com/31370590/236804229-35e565ad-601e-4c3b-8215-63b0c173413b.png",
+      recipeImg: "https://github.com/PlzFridge/Fridge-Web/assets/31370590/bc8a33d8-dded-486e-bcce-4cf71d7aae3e",
       ingredientList: ["", ""],
       method: "",
       existList: ["김치", "감자"],
@@ -22,8 +21,7 @@ export default function RecipeList() {
     {
       recipeId: 2,
       recipeName: "김치볶음밥",
-      recipeImg:
-        "https://user-images.githubusercontent.com/31370590/236810148-ff27e0ec-d8c9-4752-96ff-e48b4d9a6302.png",
+      recipeImg: "https://github.com/PlzFridge/Fridge-Web/assets/31370590/f88f67fe-0b7b-482f-9992-2b99eeca6d11",
       existList: ["김치", "감자"],
       notExistList: ["마늘", "양파"],
       carbon: 860,
