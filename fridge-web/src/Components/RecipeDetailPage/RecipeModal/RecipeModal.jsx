@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './RecipeModal.module.css'
 import axios from 'axios';
+import instance from './../../API/api';
 
 export default function RecipeModal(props) {
     const exist_list = props.existList; // RecipeModal에서 넘겨받은 exist_list
@@ -20,22 +21,23 @@ export default function RecipeModal(props) {
     const getUsedList = () => {
         // 사용한 재료 = Exist_list - 유저가 선택한 남은 재료
         const usedList = exist_list.filter((item)=>!remainList.includes(item));
-        console.log(usedList);
+        const forDelete = usedList.join(",");
+        console.log(forDelete);
         return ({
-            deleteList : usedList
+            deleteList : forDelete
         });
     };
 
-    const deleteUsedList = () => {
-        axios.post('/delete-after', getUsedList())
-        .then(response => {
-          console.log(response.data);
-        })
-        .catch(error => {
-          console.error(error);
-        });
-      }
-
+    const deleteUsedList = async() => {
+        try{
+            const response = await instance.post("/save", getUsedList()); 
+            console.log(response);
+        }
+        catch (error) {
+            console.error(error);
+        }
+    }
+  
     function closeModal()  {
         // 완료 버튼 눌렀을 때, 
         // Exist_list - 유저가 선택한 남은 재료 = 사용한 재료
@@ -50,7 +52,7 @@ export default function RecipeModal(props) {
             <div className={styles.check__box__container}>
                 {exist_list.map((item) => (
                     <label for = {exist_list.indexOf(item)} className={styles.check__label}>
-                    <input id = {exist_list.indexOf(item)} className={styles.check__box} type='checkbox' 
+                    <input id = {exist_list.indexOf(item)} key={exist_list.indexOf(item)} className={styles.check__box} type='checkbox' 
                     value ={item} onChange={handleInputChange}></input>
                     {item}</label>
                 ))} 

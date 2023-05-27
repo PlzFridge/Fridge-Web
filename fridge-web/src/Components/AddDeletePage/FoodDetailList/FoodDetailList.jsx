@@ -26,7 +26,7 @@ export default function FoodDetailList(props) {
     const getFoodList = async () => {
         try {
             const response = await instance.get("/fridge-list");
-            setFoodList(response.data);
+            setFoodList(response.data.data);
         } catch (error) {
             console.error(error);
         }

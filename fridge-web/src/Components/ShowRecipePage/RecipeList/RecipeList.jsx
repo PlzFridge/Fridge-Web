@@ -40,7 +40,7 @@ export default function RecipeList() {
   const getRecipeListAPI = async () => {
     try {
       const response = await instance.get("/recommend");
-      setRecipeList(response.data);
+      setRecipeList(response.data.data);
     } catch (error) {
       console.error(error);
     }
