@@ -1,5 +1,7 @@
 .container {
     height: 100%;
+    display: flex;
+    justify-content: flex-start;
     text-align: center;
     flex: 2;
 }
@@ -7,12 +9,14 @@
 .list {
     display: flex;
     justify-content: flex-start;
+    align-items: flex-start;
     flex-wrap: wrap;
+    align-content: flex-start;
     height: 450px;
     overflow-y: auto;
     background-color: var(--color-bg);
     opacity: 1;
-    margin-left: 18px;
+    margin-left: 30px;
     transition: all var(--animation-duration) ease-out;
 }
 
@@ -28,6 +32,7 @@
     align-items: center;
     width: 180px;
     height: 135px;
+    max-height: 135px;
     margin: 8px;
     color: var(--color-white);
     background-color: var(--color-light-white);
