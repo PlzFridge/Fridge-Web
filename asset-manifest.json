@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Fridge-Web/static/css/main.e33ceb56.css",
-    "main.js": "/Fridge-Web/static/js/main.414a81bc.js",
+    "main.js": "/Fridge-Web/static/js/main.6be9dd36.js",
     "static/js/787.0d94a169.chunk.js": "/Fridge-Web/static/js/787.0d94a169.chunk.js",
     "index.html": "/Fridge-Web/index.html",
     "main.e33ceb56.css.map": "/Fridge-Web/static/css/main.e33ceb56.css.map",
-    "main.414a81bc.js.map": "/Fridge-Web/static/js/main.414a81bc.js.map",
+    "main.6be9dd36.js.map": "/Fridge-Web/static/js/main.6be9dd36.js.map",
     "787.0d94a169.chunk.js.map": "/Fridge-Web/static/js/787.0d94a169.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e33ceb56.css",
-    "static/js/main.414a81bc.js"
+    "static/js/main.6be9dd36.js"
   ]
 }
