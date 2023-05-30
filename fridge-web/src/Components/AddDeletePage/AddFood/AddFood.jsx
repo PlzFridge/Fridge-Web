@@ -30,7 +30,6 @@ export default function AddFood() {
     useEffect(()=>{
         const dateInput = document.getElementById('durationDate');
         dateInput.min = getToday();
-        console.log('컴포넌트가 마운트되었습니다.');
     }, []);
     
 
@@ -44,9 +43,12 @@ export default function AddFood() {
 
     // 식재료 추가하는 POST Method
     const postNewFood = async () => {
-        if(newFood !== "" && newDate !== ""){ // 추가될 재료 이름과 유통기한 모두 선택되었을 때 추가 가능
+        if(newFood !== ""){ // 추가될 재료 이름과 유통기한 모두 선택되었을 때 추가 가능
             try {
                 const response = await instance.post("/save", getNewFoodDate()); 
+                setNewFood("");
+                setNewDate("");
+                console.log(response);
             } catch (error) {
                 console.error(error);
             }
@@ -57,7 +59,7 @@ export default function AddFood() {
     return (
         <div className={styles.container}>
             <p className={styles.add__food}>식재료 추가</p>
-            <select id="newFood" className={styles.add__food__name} onChange={handleFoodChange}>
+            <select id="newFood" className={styles.add__food__name} onChange={handleFoodChange} value={newFood}>
                 <option value="">추가할 재료</option>
                 {
                     ingredientList.map((item) => (
@@ -65,7 +67,7 @@ export default function AddFood() {
                     ))
                 }
             </select>
-            <input type="date" id="durationDate" className={styles.add__duration__at} onChange={handleDateChange}/>
+            <input type="date" id="durationDate" className={styles.add__duration__at} onChange={handleDateChange} value={newDate}/>
             <IoMdAddCircle className={styles.add__button} onClick={postNewFood}/>
         </div> 
     );

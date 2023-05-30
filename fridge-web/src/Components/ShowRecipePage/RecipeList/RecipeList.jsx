@@ -6,6 +6,7 @@ import ingredientList from "./../../API/ingredientList";
 import instance from "../../API/api";
 
 export default function RecipeList() {
+
   // dummy data
   const [recipeList, setRecipeList] = useState([
     {
@@ -34,13 +35,14 @@ export default function RecipeList() {
       existList: ["김치", "감자"],
       notExistList: ["마늘", "양파"],
       carbon: 860,
-    },
+    }
   ]);
 
   const getRecipeListAPI = async () => {
     try {
       const response = await instance.get("/recommend");
       setRecipeList(response.data.data);
+      console.log(response.data.data);
     } catch (error) {
       console.error(error);
     }
@@ -104,3 +106,32 @@ export default function RecipeList() {
     </ul>
   );
 }
+
+
+// {
+//   recipeId: 1,
+//   recipeName: "김치찌개",
+//   recipeImg: "https://github.com/PlzFridge/Fridge-Web/assets/31370590/bc8a33d8-dded-486e-bcce-4cf71d7aae3e",
+//   ingredientList: ["", ""],
+//   method: "",
+//   existList: ["김치", "감자"],
+//   notExistList: ["마늘", "양파"],
+//   carbon: 500,
+// },
+// {
+//   recipeId: 2,
+//   recipeName: "김치볶음밥",
+//   recipeImg: "https://github.com/PlzFridge/Fridge-Web/assets/31370590/f88f67fe-0b7b-482f-9992-2b99eeca6d11",
+//   existList: ["김치", "감자"],
+//   notExistList: ["마늘", "양파"],
+//   carbon: 860,
+// },
+// {
+//   recipeId: 3,
+//   recipeName: "김치찌개",
+//   recipeImg:
+//     "https://user-images.githubusercontent.com/31370590/236804229-35e565ad-601e-4c3b-8215-63b0c173413b.png",
+//   existList: ["김치", "감자"],
+//   notExistList: ["마늘", "양파"],
+//   carbon: 860,
+// }

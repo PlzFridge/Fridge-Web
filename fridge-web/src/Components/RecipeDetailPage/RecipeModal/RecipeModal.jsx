@@ -30,7 +30,7 @@ export default function RecipeModal(props) {
 
     const deleteUsedList = async() => {
         try{
-            const response = await instance.post("/save", getUsedList()); 
+            const response = await instance.post("/delete-after", getUsedList()); 
             console.log(response);
         }
         catch (error) {
@@ -51,7 +51,7 @@ export default function RecipeModal(props) {
             <p className={styles.modal__title}>사용하고 남은 재료가 있다면 선택해주세요</p>
             <div className={styles.check__box__container}>
                 {exist_list.map((item) => (
-                    <label for = {exist_list.indexOf(item)} className={styles.check__label}>
+                    <label for = {exist_list.indexOf(item)} key={exist_list.indexOf(item)} className={styles.check__label}>
                     <input id = {exist_list.indexOf(item)} key={exist_list.indexOf(item)} className={styles.check__box} type='checkbox' 
                     value ={item} onChange={handleInputChange}></input>
                     {item}</label>
