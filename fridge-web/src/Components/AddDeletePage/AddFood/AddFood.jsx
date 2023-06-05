@@ -4,7 +4,7 @@ import {IoMdAddCircle} from 'react-icons/io'
 import ingredientList from '../../API/ingredientList';
 import instance from '../../API/api';
 
-export default function AddFood() {
+export default function AddFood(props) {
     
     const [newFood, setNewFood] = useState("");
     const [newDate, setNewDate] = useState("");
@@ -48,6 +48,8 @@ export default function AddFood() {
                 const response = await instance.post("/save", getNewFoodDate()); 
                 setNewFood("");
                 setNewDate("");
+                props.afterFoodUpdate();
+                window.location.reload();
                 console.log(response);
             } catch (error) {
                 console.error(error);
