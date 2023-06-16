@@ -6,37 +6,8 @@ import ingredientList from "./../../API/ingredientList";
 import instance from "../../API/api";
 
 export default function RecipeList() {
-
   // dummy data
-  const [recipeList, setRecipeList] = useState([
-    {
-      recipeId: 1,
-      recipeName: "김치찌개",
-      recipeImg: "https://github.com/PlzFridge/Fridge-Web/assets/31370590/bc8a33d8-dded-486e-bcce-4cf71d7aae3e",
-      ingredientList: ["", ""],
-      method: "",
-      existList: ["김치", "감자"],
-      notExistList: ["마늘", "양파"],
-      carbon: 500,
-    },
-    {
-      recipeId: 2,
-      recipeName: "김치볶음밥",
-      recipeImg: "https://github.com/PlzFridge/Fridge-Web/assets/31370590/f88f67fe-0b7b-482f-9992-2b99eeca6d11",
-      existList: ["김치", "감자"],
-      notExistList: ["마늘", "양파"],
-      carbon: 860,
-    },
-    {
-      recipeId: 3,
-      recipeName: "김치찌개",
-      recipeImg:
-        "https://user-images.githubusercontent.com/31370590/236804229-35e565ad-601e-4c3b-8215-63b0c173413b.png",
-      existList: ["김치", "감자"],
-      notExistList: ["마늘", "양파"],
-      carbon: 860,
-    }
-  ]);
+  const [recipeList, setRecipeList] = useState([]);
 
   const getRecipeListAPI = async () => {
     try {
@@ -93,12 +64,16 @@ export default function RecipeList() {
               alt="recipe_img"
             />
             <div className={styles.ingredient__list}>
-              <span className={styles.exist__list}>
-                {"냉장고에 있는 재료 : " + item.existList.join(" ")}
-              </span>
-              <span className={styles.not__exist__list}>
-                {"사야하는 재료 : " + item.notExistList.join(" ")}
-              </span>
+              {item.existList.length!==0 && (
+                <span className={styles.exist__list}>
+                  {"냉장고에 있는 재료 : " + item.existList.join(" ")}
+                </span>
+              )}
+              {item.notExistList.length!==0 && (
+                <span className={styles.not__exist__list}>
+                  {"사야하는 재료 : " + item.notExistList.join(" ")}
+                </span>
+              )}
             </div>
           </div>
         </li>
@@ -106,32 +81,3 @@ export default function RecipeList() {
     </ul>
   );
 }
-
-
-// {
-//   recipeId: 1,
-//   recipeName: "김치찌개",
-//   recipeImg: "https://github.com/PlzFridge/Fridge-Web/assets/31370590/bc8a33d8-dded-486e-bcce-4cf71d7aae3e",
-//   ingredientList: ["", ""],
-//   method: "",
-//   existList: ["김치", "감자"],
-//   notExistList: ["마늘", "양파"],
-//   carbon: 500,
-// },
-// {
-//   recipeId: 2,
-//   recipeName: "김치볶음밥",
-//   recipeImg: "https://github.com/PlzFridge/Fridge-Web/assets/31370590/f88f67fe-0b7b-482f-9992-2b99eeca6d11",
-//   existList: ["김치", "감자"],
-//   notExistList: ["마늘", "양파"],
-//   carbon: 860,
-// },
-// {
-//   recipeId: 3,
-//   recipeName: "김치찌개",
-//   recipeImg:
-//     "https://user-images.githubusercontent.com/31370590/236804229-35e565ad-601e-4c3b-8215-63b0c173413b.png",
-//   existList: ["김치", "감자"],
-//   notExistList: ["마늘", "양파"],
-//   carbon: 860,
-// }

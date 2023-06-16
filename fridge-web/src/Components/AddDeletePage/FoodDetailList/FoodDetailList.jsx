@@ -11,7 +11,7 @@ export default function FoodDetailList(props) {
     }
     
     // dummy data
-    const [foodList, setFoodList] = useState([]);
+    const [foodList, setFoodList] = useState([]);    
 
     const getFoodList = async () => {
         try {

@@ -8,6 +8,7 @@ import DeleteModal from './DeleteModal/DeleteModal';
 export default function AddDeletePage() { 
     const [modalOpen, setModalOpen] = useState(false); // 모달창의 오픈 여부 
     const [selectedFood, setSelectedFood] = useState(-1);
+    const [foodUpdate, setFoodUpdate] = useState(false); // 재료가 추가되었을 때, 
 
     const myListRef = useRef(null);
 
@@ -21,6 +22,10 @@ export default function AddDeletePage() {
         setSelectedFood(-1);
     }
 
+    const afterFoodUpdate = () => {
+        setFoodUpdate((prev) =>(!prev));
+    }
+
     return (
         <div className={styles.container}>
             {!modalOpen ? (            
@@ -30,8 +35,8 @@ export default function AddDeletePage() {
                         </header>
                         <div className={styles.food__container}>
                             <Category/>
-                            <FoodDetailList openModal={openModal}/> 
-                            <AddFood/> 
+                            <FoodDetailList openModal={openModal} foodUpdate={foodUpdate}/> 
+                            <AddFood afterFoodUpdate={afterFoodUpdate}/> 
                         </div>
                     </div>
                     ) : (

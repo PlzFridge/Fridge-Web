@@ -83,10 +83,10 @@ export default function RecipeDetailPage() {
             </span>
             <div className={styles.carbon__text__container}>
               <span className={styles.carbon__text}>
-                {"이는 승용차 1대가 "} {(recipeDetail.carbon * 0.0041).toFixed(3)} {"km 이동 시 배출하는 탄소량이며"}
+                {"이는 승용차 🚗 1대가 "} <span className={styles.carbon__output}>{(recipeDetail.carbon * 0.0061).toFixed(3)}</span>{" km 이동 시 배출하는 탄소량이며"}
               </span>
               <span className={styles.carbon__text}>
-                {"소나무 "} {(recipeDetail.carbon / 8530 * 365).toFixed(3)}{" 그루가 하루에 흡수하는 이산화탄소량과 같습니다"}
+                {"소나무🌲 "} <span className={styles.carbon__output}>{(1 / 6.438 * recipeDetail.carbon).toFixed(3)}</span>{" 그루가 하루에 흡수하는 이산화탄소량과 같습니다."}
               </span>
             </div>
           </div>

@@ -41,6 +41,7 @@
 
 .recipe__content{
     display: flex;
+    justify-content: flex-start;
     margin-top: 12px;
 }
 
@@ -50,13 +51,14 @@
 }
 
 .ingredient__list{
+    margin-left: 12px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-left: 8px;
+    justify-content: flex-start;
 }
 
 .exist__list{
+    margin-top: 12px;
     margin-bottom: 12px;
     color: var(--color-green);
     font-size: 1rem;

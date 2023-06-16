@@ -7,12 +7,7 @@ import instance from '../../API/api';
 export default function FoodList() {
     
     // dummy data
-    const [foodList, setFoodList] = useState([
-        {fridgeId: 1, ingredientId: 1, ingredientName: '당근', ingredientImg: 'https://github.com/PlzFridge/Fridge-Web/assets/31370590/da57a899-c7da-4313-9f46-2e7e5f04b839', storedAt:'2023-05-02', durationAt:'2023-05-05'},
-        {fridgeId: 2, ingredientId: 3, ingredientName: '대파', ingredientImg: 'https://github.com/PlzFridge/Fridge-Web/assets/31370590/773011b3-c432-4bd7-859c-ca5471232a7f', storedAt:'2023-05-02', durationAt:'2023-05-05'},
-        {fridgeId: 3, ingredientId: 1, ingredientName: '감자', ingredientImg: 'https://github.com/PlzFridge/Fridge-Web/assets/31370590/93ffb9fd-9d0a-446e-90ee-5f87099e4965', storedAt:'2023-05-02', durationAt:'2023-05-05'},
-        {fridgeId: 4, ingredientId: 3, ingredientName: '양파', ingredientImg: 'https://github.com/PlzFridge/Fridge-Web/assets/31370590/8a6a3064-e61d-47e5-be72-70bec26ae322', storedAt:'2023-05-02', durationAt:'2023-05-05'},
-        ]);
+    const [foodList, setFoodList] = useState([]);
 
     const getFoodListAPI = async () => {
       try {
@@ -77,4 +72,3 @@ export default function FoodList() {
 //         {fridgeId: '29', ingredientId: "1", ingredientName: '무', ingredientImg: 'https://github.com/PlzFridge/Fridge-Web/assets/31370590/73099561-fd4d-4d28-8b2c-dbaaa2eed300', storedAt:'2023-05-02', durationAt:'2023-05-05'},
 //         {fridgeId: '30', ingredientId: "1", ingredientName: '고구마', ingredientImg: 'https://github.com/PlzFridge/Fridge-Web/assets/31370590/f886bec9-5ea5-4ecb-b1a8-5919da4994d5', storedAt:'2023-05-02', durationAt:'2023-05-05'},
 //         {fridgeId: '31', ingredientId: "1", ingredientName: '떡', ingredientImg: 'https://github.com/PlzFridge/Fridge-Web/assets/31370590/38d925c8-81c2-44ce-8cb5-33bb21dea65b', storedAt:'2023-05-02', durationAt:'2023-05-05'}
-      
